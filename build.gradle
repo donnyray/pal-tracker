@@ -1,0 +1,31 @@
+plugins {
+    id "java"
+    id "org.springframework.boot" version "1.5.4.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+bootRun.environment([
+        "WELCOME_MESSAGE": "bootrun",
+        "PORT": "8080",
+        "MEMORY_LIMIT": "1024",
+        "CF_INSTANCE_INDEX": "-1",
+        "CF_INSTANCE_ADDR" : "10.0.0.1",
+
+])
+
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+        "PORT": "8080",
+        "MEMORY_LIMIT": "1024",
+        "CF_INSTANCE_INDEX": "-1",
+        "CF_INSTANCE_ADDR" : "10.0.0.1",
+
+])
