@@ -15,6 +15,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(classes = PalTrackerApplication.class, webEnvironment = RANDOM_PORT)
 public class WelcomeApiTest {
 
+    // some random comment
     @Autowired
     private TestRestTemplate restTemplate;
 
