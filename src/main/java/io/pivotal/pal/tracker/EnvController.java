@@ -12,8 +12,8 @@ public class EnvController {
 
     private Map<String, String> env;
 
-    public EnvController(@Value("${PORT}") String port, @Value("${MEMORY_LIMIT}") String memLmt,
-                         @Value("${CF_INSTANCE_INDEX}") String instIdx, @Value("${CF_INSTANCE_ADDR}") String instAddr) {
+    public EnvController(@Value("${PORT:8080}") String port, @Value("${MEMORY_LIMIT:notset}") String memLmt,
+                         @Value("${CF_INSTANCE_INDEX:notset}") String instIdx, @Value("${CF_INSTANCE_ADDR:notset}") String instAddr) {
         env = new HashMap<>();
         env.put("PORT", port);
         env.put("MEMORY_LIMIT", memLmt);
